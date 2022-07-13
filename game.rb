@@ -16,7 +16,6 @@ class Game
     input = gets.chomp
     if input == 'g'
       code = cpu.make_code
-      binding.pry
       12.times do
         break if human_player.crack_code(code)
       end
