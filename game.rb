@@ -1,6 +1,5 @@
 require_relative 'cpu_player'
 require_relative 'human_player'
-require 'pry-byebug'
 
 class Game
   attr_accessor :cpu, :human_player, :code
@@ -23,7 +22,6 @@ class Game
       end
     elsif input == 'c'
       code = human_player.make_code
-      p code
       12.times do
         break if cpu.crack_code(code)
       end
