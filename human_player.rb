@@ -48,6 +48,6 @@ class HumanPlayer
 
   def make_code
     puts 'Enter your secret code (separated with spaces): '
-    self.code = code.concat(gets.chomp.split)
+    self.code.concat(gets.chomp.split)
   end
 end
