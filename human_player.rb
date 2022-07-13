@@ -2,7 +2,6 @@ class HumanPlayer
   attr_accessor :code, :colors, :player_guess
 
   def initialize
-    #@colors = %w[red green blue yellow purple orange]
     @player_guess = []
     @code = Array.new(4)
   end
