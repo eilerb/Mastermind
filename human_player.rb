@@ -2,8 +2,9 @@ class HumanPlayer
   attr_accessor :code, :colors, :player_guess
 
   def initialize
-    @colors = %w[red green blue yellow purple orange]
+    #@colors = %w[red green blue yellow purple orange]
     @player_guess = []
+    @code = Array.new(4)
   end
 
   def guess
@@ -44,5 +45,10 @@ class HumanPlayer
     puts "#{correct_color} of the colors you guessed were right and #{correct_spot} were in the correct spot"
     self.player_guess = []
     false
+  end
+
+  def make_code
+    puts 'Enter your secret code (separated with spaces): '
+    self.code = code.concat(gets.chomp.split)
   end
 end
