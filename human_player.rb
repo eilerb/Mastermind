@@ -3,7 +3,7 @@ class HumanPlayer
 
   def initialize
     @player_guess = []
-    @code = Array.new(4)
+    @code = []
   end
 
   def guess

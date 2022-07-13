@@ -22,7 +22,12 @@ class Game
         break if human_player.crack_code(code)
       end
     elsif input == 'c'
-      human_player.make_code
+      code = human_player.make_code
+      p code
+      12.times do
+        break if cpu.crack_code(code)
+      end
+    end
   end
 end
 
