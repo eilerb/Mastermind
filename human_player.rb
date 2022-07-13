@@ -1,5 +1,3 @@
-# require_relative 'player'
-
 class HumanPlayer
   attr_accessor :code, :colors, :player_guess
 
@@ -16,7 +14,6 @@ class HumanPlayer
   def crack_code(code)
     correct_color = 0
     correct_spot = 0
-    i = 0
     guess
 
     if player_guess == code
@@ -49,5 +46,3 @@ class HumanPlayer
     false
   end
 end
-
-# HumanPlayer < Player
