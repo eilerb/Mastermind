@@ -12,7 +12,7 @@ class Game
   end
 
   def play
-    puts "Would you like to guess or make the code?\nEnter'g' to guess or 'c' to make the secret code"
+    puts "Would you like to guess or make the code?\nEnter 'g' to guess or 'c' to make the secret code"
     input = gets.chomp
     if input == 'g'
       code = cpu.make_code
