@@ -1,6 +1,9 @@
 class Player
-  def initialize(name)
-    @name = name
+  attr_accessor :code
+
+  def initialize
     @colors = %w[red green blue yellow purple orange]
   end
+
+  def crack_code(cpu_code); end
 end
