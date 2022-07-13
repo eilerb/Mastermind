@@ -17,7 +17,6 @@ class Game
     binding.pry
     12.times do
       break if human_player.crack_code(code)
-      human_player.player_guess
     end
   end
 end
