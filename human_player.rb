@@ -1,8 +1,60 @@
 require_relative 'player'
 
 class HumanPlayer
-  def initialize(name)
-    @name = name
+  attr_accessor :code, :colors, :player_guess
+
+  def initialize
+    super()
+    @player_guess = []
+  end
+
+  def guess
+    puts 'What is your guess? (Enter colors separated by a space)'
+    player_guess.concat(gets.chomp.split)
+  end
+
+  def crack_code(code)
+    correct_color = 0
+    correct_spot = 0
+    guess
+
+    if player_guess == code
+      puts "You broke the code! Congratulations!"
+      return true 
+    end
+
+    if code.include?(player_guess[0])
+      correct_color += 1
+      if player_guess[0] == code[0]
+        correct_spot += 1
+      end
+    end
+
+    if code.include?(player_guess[1])
+      correct_color += 1
+      if player_guess[1] == code[1]
+        correct_spot += 1
+      end
+    end
+
+    if code.include?(player_guess[2])
+      correct_color += 1
+      if player_guess[2] == code[2]
+        correct_spot += 1
+      end
+    end
+
+    if code.include?(player_guess[3])
+      correct_color += 1
+      if player_guess[3] == code[3]
+        correct_spot += 1
+      end
+    end
+
+
+    puts "#{correct_color} of the colors you guessed were right and #{correct_spot} were in the correct spot"
+    self.player_guess = []
+    false
   end
 end
 
