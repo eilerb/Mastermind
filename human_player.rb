@@ -1,10 +1,10 @@
-require_relative 'player'
+# require_relative 'player'
 
 class HumanPlayer
   attr_accessor :code, :colors, :player_guess
 
   def initialize
-    super()
+    @colors = %w[red green blue yellow purple orange]
     @player_guess = []
   end
 
@@ -16,41 +16,33 @@ class HumanPlayer
   def crack_code(code)
     correct_color = 0
     correct_spot = 0
+    i = 0
     guess
 
     if player_guess == code
-      puts "You broke the code! Congratulations!"
-      return true 
+      puts 'You broke the code! Congratulations!'
+      return true
     end
 
     if code.include?(player_guess[0])
       correct_color += 1
-      if player_guess[0] == code[0]
-        correct_spot += 1
-      end
+      correct_spot += 1 if player_guess[0] == code[0]
     end
 
     if code.include?(player_guess[1])
       correct_color += 1
-      if player_guess[1] == code[1]
-        correct_spot += 1
-      end
+      correct_spot += 1 if player_guess[1] == code[1]
     end
 
     if code.include?(player_guess[2])
       correct_color += 1
-      if player_guess[2] == code[2]
-        correct_spot += 1
-      end
+      correct_spot += 1 if player_guess[2] == code[2]
     end
 
     if code.include?(player_guess[3])
       correct_color += 1
-      if player_guess[3] == code[3]
-        correct_spot += 1
-      end
+      correct_spot += 1 if player_guess[3] == code[3]
     end
-
 
     puts "#{correct_color} of the colors you guessed were right and #{correct_spot} were in the correct spot"
     self.player_guess = []
@@ -58,4 +50,4 @@ class HumanPlayer
   end
 end
 
-HumanPlayer < Player
+# HumanPlayer < Player
