@@ -1,4 +1,4 @@
-require_relative 'player'
+# require_relative 'player'
 
 class CPUPlayer
   attr_accessor :colors, :code
@@ -10,8 +10,8 @@ class CPUPlayer
 
   def make_code
     code = Array.new(4)
-    self.code = code.map { |item| item = colors.shuffle.pop }
+    self.code = code.map { |_item| item = colors.shuffle.pop }
   end
 end
 
-CPUPlayer < Player
+# CPUPlayer < Player
