@@ -13,11 +13,16 @@ class Game
   end
 
   def play
-    code = cpu.make_code
-    binding.pry
-    12.times do
-      break if human_player.crack_code(code)
-    end
+    puts "Would you like to guess or make the code?\nEnter'g' to guess or 'c' to make the secret code"
+    input = gets.chomp
+    if input == 'g'
+      code = cpu.make_code
+      binding.pry
+      12.times do
+        break if human_player.crack_code(code)
+      end
+    elsif input == 'c'
+      human_player.make_code
   end
 end
 
